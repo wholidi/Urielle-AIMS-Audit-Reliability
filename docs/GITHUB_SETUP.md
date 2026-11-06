@@ -4,19 +4,19 @@
 
 The repository already contains a `README.md`. Do **not** initialize a new Git repository in the full OdySEA research workspace, and do **not** push to the Urielle production toolkit.
 
-1. Extract this package to a clean location such as `C:\AI Project\Urielle_AIMS_Audit_Reliability_Public_Package`.
+1. Extract this package to a clean local working directory.
 2. In PowerShell, clone the existing research repository and copy the inspected files into that clone:
 
 ```powershell
-$repo = "C:\AI Project\Urielle_AIMS_Audit_Reliability_Public"
+$repo = Join-Path (Get-Location) "Urielle-AIMS-Audit-Reliability"
 git clone https://github.com/wholidi/Urielle-AIMS-Audit-Reliability.git $repo
 cd $repo
-# Copy the contents of the extracted package (README.md, .gitignore, docs/) here.
+# Copy the inspected public package contents here.
 git status --short
 git diff -- README.md
-git add README.md .gitignore docs/METHODOLOGY.md docs/WEEK1_CLOSURE.md docs/WEEK2_MVP1_PLAN.md docs/GITHUB_SETUP.md
+git add -- README.md .gitignore benchmark docs src tests validation
 git diff --cached --name-only
-git commit -m "docs: close Week 1 Urielle AIMS audit reliability milestone"
+git commit -m "docs: publish Week 1 technical evidence and controls"
 git push origin main
 ```
 

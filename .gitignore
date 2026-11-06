@@ -21,3 +21,13 @@ P1C_07D_Operational_Controls/
 evaluator_stage/
 reports/private/
 logs/private/
+
+# Generated public-control outputs and local test artifacts
+reports/
+*.coverage
+coverage.xml
+htmlcov/
+baseline_inputs.json
+intervention_inputs.json
+paired_input_report.json
+CALIBRATION_LOG_SHA256SUMS.txt

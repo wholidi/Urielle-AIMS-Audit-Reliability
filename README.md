@@ -22,7 +22,11 @@ The experiment focuses on **Clause 4.3 (AIMS Scope), C4-Q03**. It examines wheth
 ## Documentation
 
 - [Week 1 closure](docs/WEEK1_CLOSURE.md)
+- [Phase 1 technical audit](docs/PHASE1_TECHNICAL_AUDIT.md)
 - [Research methodology](docs/METHODOLOGY.md)
+- [Benchmark publication boundary](benchmark/README.md)
+- [Week 1 validation](validation/WEEK1_VALIDATION.md)
+- [Public test results](validation/TEST_RESULTS.md)
 - [Week 2 / MVP1 baseline plan](docs/WEEK2_MVP1_PLAN.md)
 
 ## Evidence and limitations
