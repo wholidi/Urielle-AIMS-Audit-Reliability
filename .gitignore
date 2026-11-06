@@ -1,0 +1,23 @@
+# Restricted research records and local infrastructure
+P1C_Restricted_Admin/
+restricted_reference/
+reference_labels_restricted/
+*RESTRICTED*
+*calibration*log*.csv
+*reviewer*practice*.csv
+*case_reconciliation_mapping*
+*.env
+.env*
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+Thumbs.db
+# Private/local datasets and generated outputs
+OdySEA_P1C_Benchmark_v0_2/
+P1C_07D_Operational_Controls/
+evaluator_stage/
+reports/private/
+logs/private/
