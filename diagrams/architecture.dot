@@ -1,0 +1,29 @@
+digraph G {
+graph [rankdir=TB, pad="0.28", nodesep="0.3", ranksep="0.45", bgcolor="white", fontname="Arial", compound=true, splines=ortho];
+node [shape=box, style="rounded,filled", penwidth=1.1, fontname="Arial", fontsize=11, margin="0.16,0.1", fillcolor="#F4F8FB", color="#B9CCD9", fontcolor="#163249"];
+edge [fontname="Arial", fontsize=9, color="#61839B", arrowsize=0.72, penwidth=1.15];
+subgraph cluster_private {label="RESTRICTED RESEARCH / SEALED INPUTS"; fontsize=12; fontname="Arial Bold"; color="#D8A687"; fillcolor="#FFF8F1"; style="rounded,filled";
+case [label="20 synthetic Clause 4.3 cases\n23 hash-verified evidence files",fillcolor="#FFF1E1",color="#C99B72"];
+reviewer [label="Fixed reviewer-disposition\ntest conditions",fillcolor="#FFF1E1",color="#C99B72"];
+labels [label="Research-lead calibrated\nreference labels / adjudications\nSEALED — never evaluator input",fillcolor="#FFE8E0",color="#C47D62"];
+}
+subgraph cluster_eval {label="WEEK 2 / MVP1 — PROPOSED BASELINE EXPERIMENT"; fontsize=12; fontname="Arial Bold"; color="#AFC5DD"; fillcolor="#F5FAFF"; style="rounded,filled";
+staging [label="Existing controls\nFail-closed input staging\nSHA-256 / no-label checks",fillcolor="#E4F0FA"];
+adapter [label="Minimal research-only adapter\nPLANNED — not yet executed",style="rounded,filled,dashed",color="#3F7DA8",fillcolor="#E9F3FC"];
+subgraph cluster_tool {label="UNCHANGED URIELLE TOOLKIT — AS INSPECTED (commit a561e7d...)"; fontsize=11; color="#7BA5C3"; style="rounded,filled"; fillcolor="#E8F1F8";
+calc [label="Clause 04 calculation\nResponse structure and\nevidence-reference extraction",fillcolor="#FFFFFF"];
+assess [label="EvidenceAssessor._derive_decision\nEvidence IDs + review states\n+ auditor_flag\nNO semantic consistency check",fillcolor="#FFFFFF",color="#3E7399"];
+}
+raw [label="Raw outcome + trace + hashes\nPLANNED MVP1 output",style="rounded,filled,dashed",color="#3F7DA8",fillcolor="#E9F3FC"];
+}
+subgraph cluster_score {label="RESTRICTED SCORING — AFTER EXECUTION"; fontsize=12; fontname="Arial Bold"; color="#B6A3CB"; fillcolor="#FAF7FD"; style="rounded,filled";
+scoring [label="Preapproved scoring mapping\nJOIN with sealed reference labels",style="rounded,filled,dashed",fillcolor="#F2EAF9",color="#9D7FB2"];
+metrics [label="False acceptance / false rejection\nAbstention / coverage\nCitation accuracy only if scorable",style="rounded,filled,dashed",fillcolor="#F2EAF9",color="#9D7FB2"];
+}
+subgraph cluster_future {label="WEEK 3 / MVP2 — FUTURE INTERVENTION (NOT IMPLEMENTED)"; fontsize=12; fontname="Arial Bold"; color="#9DC0A4"; fillcolor="#F3FBF4"; style="rounded,filled";
+gate [label="One claim–evidence\nconsistency verification gate",style="rounded,filled,dashed",fillcolor="#E5F5E8",color="#6A9B72"];
+pair [label="Paired-input equality control\nSame cases + reviewer conditions",fillcolor="#E5F5E8",color="#6A9B72"];
+}
+case -> staging; reviewer -> staging; staging -> adapter; adapter -> calc; calc -> assess; assess -> raw; raw -> scoring; labels -> scoring; scoring -> metrics;
+raw -> pair [style=dashed, color="#70A681",constraint=false]; pair -> gate [style=dashed,color="#70A681"];
+}
