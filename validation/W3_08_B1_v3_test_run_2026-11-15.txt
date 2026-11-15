@@ -1,0 +1,44 @@
+# Sandbox run (Linux, python3 -I) of the v3 B1 tests; engineering verification only.
+test_deterministic (test_b1_consistency_check_v3.FixtureOutcomes.test_deterministic) ... ok
+test_each_fixture_matches_its_engineering_expectation (test_b1_consistency_check_v3.FixtureOutcomes.test_each_fixture_matches_its_engineering_expectation) ... ok
+test_known_limitations_are_documented_not_hidden (test_b1_consistency_check_v3.FixtureOutcomes.test_known_limitations_are_documented_not_hidden) ... ok
+test_safety_property_nothing_unsupported_is_ever_supported (test_b1_consistency_check_v3.FixtureOutcomes.test_safety_property_nothing_unsupported_is_ever_supported)
+Core B1 safety claim on the fixtures: only a SUPPORTED-intent, non-limitation ... ok
+test_duplicate_cited_id_is_deduped_and_flagged (test_b1_consistency_check_v3.InputHandling.test_duplicate_cited_id_is_deduped_and_flagged) ... ok
+test_duplicate_evidence_id_with_different_text_is_a_failure (test_b1_consistency_check_v3.InputHandling.test_duplicate_evidence_id_with_different_text_is_a_failure) ... ok
+test_duplicate_identical_evidence_item_deduped (test_b1_consistency_check_v3.InputHandling.test_duplicate_identical_evidence_item_deduped) ... ok
+test_input_is_never_mutated (test_b1_consistency_check_v3.InputHandling.test_input_is_never_mutated) ... ok
+test_malformed_inputs_fail_safely_without_raising (test_b1_consistency_check_v3.InputHandling.test_malformed_inputs_fail_safely_without_raising) ... ok
+test_missing_evidence (test_b1_consistency_check_v3.InputHandling.test_missing_evidence) ... ok
+test_record_traces_claim_and_evidence_identity (test_b1_consistency_check_v3.InputHandling.test_record_traces_claim_and_evidence_identity) ... ok
+test_reference_label_fields_are_rejected_anywhere (test_b1_consistency_check_v3.InputHandling.test_reference_label_fields_are_rejected_anywhere) ... ok
+test_unresolved_id_blocks_automatic_support (test_b1_consistency_check_v3.InputHandling.test_unresolved_id_blocks_automatic_support) ... ok
+test_unresolved_only_id_is_insufficient (test_b1_consistency_check_v3.InputHandling.test_unresolved_only_id_is_insufficient) ... ok
+test_module_does_not_import_b0_or_scoring_or_touch_files (test_b1_consistency_check_v3.Isolation.test_module_does_not_import_b0_or_scoring_or_touch_files) ... ok
+test_invalid_judge_output_is_failure (test_b1_consistency_check_v3.JudgeSafety.test_invalid_judge_output_is_failure) ... ok
+test_judge_exception_becomes_typed_failure (test_b1_consistency_check_v3.JudgeSafety.test_judge_exception_becomes_typed_failure) ... ok
+test_pluggable_judge_identity_is_recorded_and_unresolved_still_blocks (test_b1_consistency_check_v3.JudgeSafety.test_pluggable_judge_identity_is_recorded_and_unresolved_still_blocks) ... ok
+test_policy_hash_changes_with_any_threshold (test_b1_consistency_check_v3.JudgeSafety.test_policy_hash_changes_with_any_threshold) ... ok
+test_existing_paired_input_gate_accepts_equal_inputs_and_rejects_drift (test_b1_consistency_check_v3.PairedTable.test_existing_paired_input_gate_accepts_equal_inputs_and_rejects_drift) ... ok
+test_mismatched_or_duplicate_ids_rejected (test_b1_consistency_check_v3.PairedTable.test_mismatched_or_duplicate_ids_rejected) ... ok
+test_rows_are_label_free_and_complete (test_b1_consistency_check_v3.PairedTable.test_rows_are_label_free_and_complete) ... ok
+test_upgrade_is_detected_as_invariant_violation (test_b1_consistency_check_v3.PairedTable.test_upgrade_is_detected_as_invariant_violation) ... ok
+test_b0_accept_released_only_when_supported (test_b1_consistency_check_v3.WrapperPolicy.test_b0_accept_released_only_when_supported) ... ok
+test_b0_accept_with_b1_failure_has_no_disposition_and_blocks_entry (test_b1_consistency_check_v3.WrapperPolicy.test_b0_accept_with_b1_failure_has_no_disposition_and_blocks_entry) ... ok
+test_b0_record_not_mutated (test_b1_consistency_check_v3.WrapperPolicy.test_b0_record_not_mutated) ... ok
+test_b0_technical_failure_passes_through_without_disposition (test_b1_consistency_check_v3.WrapperPolicy.test_b0_technical_failure_passes_through_without_disposition) ... ok
+test_b0_withhold_is_never_upgraded (test_b1_consistency_check_v3.WrapperPolicy.test_b0_withhold_is_never_upgraded) ... ok
+test_case_id_mismatch_between_b0_and_b1_input_blocks_entry (test_b1_consistency_check_v3.WrapperPolicy.test_case_id_mismatch_between_b0_and_b1_input_blocks_entry) ... ok
+test_reason_and_human_review_mapping (test_b1_consistency_check_v3.WrapperPolicy.test_reason_and_human_review_mapping) ... ok
+test_never_supported (test_b1_hardening_v3.Adversarial.test_never_supported) ... ok
+test_apply_b1_never_raises (test_b1_hardening_v3.Hardening.test_apply_b1_never_raises) ... ok
+test_restricted_key_variants (test_b1_hardening_v3.Hardening.test_restricted_key_variants) ... ok
+test_straightforward_support_still_supported (test_b1_hardening_v3.Hardening.test_straightforward_support_still_supported) ... ok
+test_default_policy_hash_is_stable (test_b1_hardening_v3.PolicyHashCoversCues.test_default_policy_hash_is_stable) ... ok
+test_every_cue_list_changes_the_policy_hash (test_b1_hardening_v3.PolicyHashCoversCues.test_every_cue_list_changes_the_policy_hash) ... ok
+test_policy_cues_drive_behaviour (test_b1_hardening_v3.PolicyHashCoversCues.test_policy_cues_drive_behaviour) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.046s
+
+OK
