@@ -1,0 +1,12 @@
+# Keep B1 engineering files byte-identical to their SHA-256 manifests on Windows checkouts
+src/b1_consistency_check*.py text eol=lf
+tests/test_b1_*.py text eol=lf
+tests/fixtures/b1_synthetic_fixtures*.json text eol=lf
+docs/ADR_B1_001_*.md text eol=lf
+docs/W3_04_B1_*.md text eol=lf
+docs/W3_05_B1_*.md text eol=lf
+docs/W3_06_Paired_B0_B1_*.md text eol=lf
+docs/W3_08_B1_*.md text eol=lf
+validation/W3_05_B1_*.txt text eol=lf
+validation/W3_08_B1_*.txt text eol=lf
+validation/W3_B1_*MANIFEST.sha256 text eol=lf
