@@ -6,6 +6,7 @@
 
 ```text
 MVP1_PROTOTYPE_CLOSURE=APPROVED_WITH_LIMITATIONS
+MVP1_CLOSURE_DOCUMENTARY_RECONCILIATION=COMPLETED_2026-11-15
 MVP1_SCIENTIFIC_EVALUATION=NOT_COMPLETED
 B0_SCIENTIFIC_ACCURACY=NOT_ESTABLISHED
 REFERENCE_LABEL_FREEZE=PENDING
@@ -16,7 +17,7 @@ G4_ACTUAL_SCIENTIFIC_SCORING=NOT_AUTHORIZED
 
 ## Decision provenance
 
-A local research-lead decision copy reports `APPROVE_WITH_LIMITATIONS`, an attestation at 14 November 2026, 16:24 Singapore time, and a current disposition of approved. Its header still says “DRAFT — RESEARCH-LEAD REVIEW PENDING.” No corrected, independently authenticated decision record was available for this publication review. This summary records the **research-lead-reported** disposition; it does not independently authenticate the typed attestation or reconcile the conflicting header. The original copy remains outside the proposed public commit. Documentary reconciliation is outstanding.
+The research lead reports a decision of `APPROVE_WITH_LIMITATIONS` with a typed attestation at 14 November 2026, 16:24 Singapore time. The local decision record initially carried a "DRAFT" status line that conflicted with that disposition; it was corrected on 15 November 2026 and the correction is documented in a reconciliation note (original and reconciled files are hashed; hashes held locally). This summary records the research-lead-reported disposition. The typed attestation has not been independently authenticated, and the research lead was also the benchmark author and calibrator. The decision copies remain outside the public commit.
 
 This narrow prototype closure leaves the historical [Week 1 advisory closure](WEEK1_CLOSURE.md) and [Week 2 scientific HOLD](WEEK2_PROGRESS_2026-11-13.md) intact. The original Week 2 exit criterion of a reproducible scored baseline remains unmet and has not been retrospectively changed. The [Week 3 handover](WEEK3_HANDOVER_2026-11-13.md) retains separate authorization gates.
 
