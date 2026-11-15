@@ -1,0 +1,324 @@
+{
+ "_comment": "Synthetic engineering fixtures authored fresh for B1 unit tests. Not derived from, and not similar by design to, the 20 benchmark cases or any reference label. 'intent' is the author's intent for the fixture only; it is not reference-label data. | v2: SYN-S03 reclassified as a known limitation (order check).",
+ "fixtures": [
+  {
+   "fixture_id": "SYN-S01",
+   "intent": "SUPPORTED",
+   "engineering_expectation": "SUPPORTED",
+   "known_limitation": false,
+   "note": "",
+   "case": {
+    "case_id": "SYN-S01",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the route-optimisation model deployed in the Rotterdam hub.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-01A",
+      "text": "Zephyr Freight's AIMS scope includes the route-optimisation model deployed in the Rotterdam hub. Scope is reviewed annually."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-01A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-S02",
+   "intent": "SUPPORTED",
+   "engineering_expectation": "SUPPORTED",
+   "known_limitation": false,
+   "note": "",
+   "case": {
+    "case_id": "SYN-S02",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "Employee HR analytics tooling is excluded from the AIMS scope.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-02A",
+      "text": "Employee HR analytics tooling is out of scope for the management system. Other tools are reviewed separately."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-02A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-S03",
+   "intent": "SUPPORTED",
+   "engineering_expectation": "INSUFFICIENT",
+   "known_limitation": true,
+   "note": "passive-voice paraphrase a human would accept; v0.2 claim-term order check rejects it (false-rejection risk; accepted trade-off, option 1)",
+   "case": {
+    "case_id": "SYN-S03",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope covers the customer-support chatbot operated in Singapore.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-03A",
+      "text": "The customer-support chatbot operated in Singapore is covered by the management system. Review is annual."
+     },
+     {
+      "evidence_id": "EV-03B",
+      "text": "Service desk staffing is listed in the HR register."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-03A",
+     "EV-03B"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-I01",
+   "intent": "INSUFFICIENT",
+   "engineering_expectation": "INSUFFICIENT",
+   "known_limitation": false,
+   "note": "second site unestablished",
+   "case": {
+    "case_id": "SYN-I01",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the route-optimisation model deployed in the Rotterdam hub and the Hamburg hub.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-01A",
+      "text": "The AIMS scope includes the route-optimisation model deployed in the Rotterdam hub."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-01A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-I02",
+   "intent": "INSUFFICIENT",
+   "engineering_expectation": "INSUFFICIENT",
+   "known_limitation": false,
+   "note": "",
+   "case": {
+    "case_id": "SYN-I02",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes all customer-facing AI systems.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-02A",
+      "text": "The scope includes the customer-support chatbot."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-02A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-I03",
+   "intent": "INSUFFICIENT",
+   "engineering_expectation": "INSUFFICIENT",
+   "known_limitation": false,
+   "note": "missing evidence",
+   "case": {
+    "case_id": "SYN-I03",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the fleet-telematics anomaly detector.",
+    "evidence_items": [],
+    "cited_evidence_ids": []
+   }
+  },
+  {
+   "fixture_id": "SYN-C01",
+   "intent": "CONTRADICTED",
+   "engineering_expectation": "CONTRADICTED",
+   "known_limitation": false,
+   "note": "",
+   "case": {
+    "case_id": "SYN-C01",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the warehouse-robotics controller.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-01A",
+      "text": "The warehouse-robotics controller is excluded from the AIMS scope."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-01A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-C02",
+   "intent": "CONTRADICTED",
+   "engineering_expectation": "CONTRADICTED",
+   "known_limitation": false,
+   "note": "",
+   "case": {
+    "case_id": "SYN-C02",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "Third-party payroll software is out of scope for the AIMS.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-02A",
+      "text": "Third-party payroll software is within the AIMS scope and covered by controls."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-02A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-R01",
+   "intent": "IRRELEVANT",
+   "engineering_expectation": "IRRELEVANT",
+   "known_limitation": false,
+   "note": "",
+   "case": {
+    "case_id": "SYN-R01",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the route-optimisation model.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-01A",
+      "text": "Zephyr Freight cafeteria menus are revised each quarter. Parking permits renew in March."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-01A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-R02",
+   "intent": "IRRELEVANT",
+   "engineering_expectation": "IRRELEVANT",
+   "known_limitation": false,
+   "note": "only boilerplate overlap",
+   "case": {
+    "case_id": "SYN-R02",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the fleet-telematics anomaly detector.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-02A",
+      "text": "The AIMS scope statement is approved by the management board of the organisation."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-02A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-A01",
+   "intent": "AMBIGUOUS_FIXTURE",
+   "engineering_expectation": "AMBIGUOUS",
+   "known_limitation": false,
+   "note": "conflicting passages",
+   "case": {
+    "case_id": "SYN-A01",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the warehouse-robotics controller.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-01A",
+      "text": "The scope includes the warehouse-robotics controller."
+     },
+     {
+      "evidence_id": "EV-01B",
+      "text": "The warehouse-robotics controller is excluded from scope."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-01A",
+     "EV-01B"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-A02",
+   "intent": "AMBIGUOUS_FIXTURE",
+   "engineering_expectation": "AMBIGUOUS",
+   "known_limitation": false,
+   "note": "citation id does not resolve",
+   "case": {
+    "case_id": "SYN-A02",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the route-optimisation model.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-02A",
+      "text": "The AIMS scope includes the route-optimisation model."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-02A",
+     "EV-999"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-A03",
+   "intent": "AMBIGUOUS_FIXTURE",
+   "engineering_expectation": "AMBIGUOUS",
+   "known_limitation": false,
+   "note": "terms scattered across sentences",
+   "case": {
+    "case_id": "SYN-A03",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the Singapore data-center backup tooling.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-03A",
+      "text": "Singapore hosts the data-center. Backup runs nightly. Tooling is licensed. Include list under review."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-03A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-L01",
+   "intent": "SUPPORTED",
+   "engineering_expectation": "INSUFFICIENT",
+   "known_limitation": true,
+   "note": "paraphrase a human would accept; lexical judge cannot (false-rejection risk)",
+   "case": {
+    "case_id": "SYN-L01",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the shipment-delay prediction service.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-01A",
+      "text": "Scope inclusions: shipment delay forecasting service (production)."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-01A"
+    ]
+   }
+  },
+  {
+   "fixture_id": "SYN-L02",
+   "intent": "CONTRADICTED",
+   "engineering_expectation": "INSUFFICIENT",
+   "known_limitation": true,
+   "note": "contradiction with no negation cue; classified INSUFFICIENT but still withheld",
+   "case": {
+    "case_id": "SYN-L02",
+    "organization": "Zephyr Freight Ltd",
+    "claim_text": "The AIMS scope includes the Rotterdam hub.",
+    "evidence_items": [
+     {
+      "evidence_id": "EV-02A",
+      "text": "The AIMS scope is limited to the Hamburg hub."
+     }
+    ],
+    "cited_evidence_ids": [
+     "EV-02A"
+    ]
+   }
+  }
+ ]
+}

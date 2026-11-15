@@ -1,0 +1,50 @@
+# W3-05 B1 engineering test run — 2026-11-15 (sandbox, Python 3.13.18, Linux)
+# Synthetic fixtures only. Engineering verification; NOT scientific evidence.
+
+## B1 tests (python -I -m unittest discover -s tests -p test_b1_consistency_check.py -v)
+test_deterministic ... ok
+test_each_fixture_matches_its_engineering_expectation ... ok
+test_known_limitations_are_documented_not_hidden ... ok
+test_safety_property_nothing_unsupported_is_ever_supported
+Core B1 safety claim on the fixtures: only a SUPPORTED-intent, non-limitation ... ok
+test_duplicate_cited_id_is_deduped_and_flagged ... ok
+test_duplicate_evidence_id_with_different_text_is_a_failure ... ok
+test_duplicate_identical_evidence_item_deduped ... ok
+test_input_is_never_mutated ... ok
+test_malformed_inputs_fail_safely_without_raising ... ok
+test_missing_evidence ... ok
+test_record_traces_claim_and_evidence_identity ... ok
+test_reference_label_fields_are_rejected_anywhere ... ok
+test_unresolved_id_blocks_automatic_support ... ok
+test_unresolved_only_id_is_insufficient ... ok
+test_module_does_not_import_b0_or_scoring_or_touch_files ... ok
+test_invalid_judge_output_is_failure ... ok
+test_judge_exception_becomes_typed_failure ... ok
+test_pluggable_judge_identity_is_recorded_and_unresolved_still_blocks ... ok
+test_policy_hash_changes_with_any_threshold ... ok
+test_existing_paired_input_gate_accepts_equal_inputs_and_rejects_drift ... ok
+test_mismatched_or_duplicate_ids_rejected ... ok
+test_rows_are_label_free_and_complete ... ok
+test_upgrade_is_detected_as_invariant_violation ... ok
+test_b0_accept_released_only_when_supported ... ok
+test_b0_accept_with_b1_failure_has_no_disposition_and_blocks_entry ... ok
+test_b0_record_not_mutated ... ok
+test_b0_technical_failure_passes_through_without_disposition ... ok
+test_b0_withhold_is_never_upgraded ... ok
+test_case_id_mismatch_between_b0_and_b1_input_blocks_entry ... ok
+test_reason_and_human_review_mapping ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.035s
+
+OK
+
+## Mutation sanity check (throwaway copy)
+mutant 1: allow B0 WITHHOLD -> ACCEPT      => B1 suite FAILED (failures=3)
+mutant 2: unresolved cited id no longer blocks support => B1 suite FAILED (failures=5)
+
+## Full existing suite, WITHOUT B1 files vs WITH B1 files
+without: Ran 50 tests; FAILED (errors=7, skipped=6)
+with   : Ran 80 tests; FAILED (errors=7, skipped=6)  -> +30 tests, 0 new failures
+The same 7 errors occur in both runs: they require the Windows toolkit path
+C:\AI Project\OdySEA_Capstone\W1\toolkit_baseline_clean, absent in this sandbox.
