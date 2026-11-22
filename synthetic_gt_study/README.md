@@ -4,7 +4,7 @@
 
 **Scope:** ISO/IEC 42001 Clause 4.3 — AI Management System Scope  
 **Audit question:** C4-Q03  
-**Status:** Study complete (synthetic data). Inputs, runs and analysis were sealed on 18 November 2026, before this README was finalised. The written report is in preparation (freeze 27 November 2026).
+**Status:** Study complete (synthetic data); not yet published. Inputs, runs and analysis were sealed on 18 November 2026, before this README was finalised. The written report is in preparation (freeze 27 November 2026).
 
 ## 1. What this study asks
 
@@ -63,10 +63,10 @@ B0: Pinned audit toolkit
 - Coverage
 - Wilson 95% confidence intervals
 - Exact paired sign test
-- Generator and label strata
+- Generator, label, family and lexical-trap strata
 - Sensitivity analyses with declared exclusions
 
-Metric definitions, denominators, and exclusion rules: defined in the pre-declared protocol amendment and the study decision record (see *Hashes and provenance*). In short: the incorrect-accept rate uses a fixed denominator (all 150 unsupported cases); false-downgrade rate = supported cases that B0 accepted and B1 did not accept, over supported cases that B0 accepted (45/50 here); Wilson 95% intervals throughout; exact two-sided paired sign test; technical failures reported separately and never silently dropped.
+The reduction is said to be supported only if the paired reduction is distinguishable from zero (exact sign test, p < 0.05) and the false-downgrade point estimate is at most 0.20. Metric definitions, denominators, and exclusion rules: defined in the pre-declared protocol amendment and the study decision record (see *Hashes and provenance*). In short: the incorrect-accept rate uses a fixed denominator (all 150 unsupported cases); false-downgrade rate = supported cases that B0 accepted and B1 did not accept, over supported cases that B0 accepted (45/50 here); Wilson 95% intervals throughout; exact two-sided paired sign test; technical failures reported separately and never silently dropped.
 
 ## 3. Headline result
 
@@ -90,10 +90,10 @@ B1 removed every incorrect acceptance, but it did so by withholding 195 of 200 c
 Reading notes:
 
 - **B0 accepts all 200 cases by construction.** The fixed response template never compares claim to evidence, so the B0 result is a property of the template, not a finding about the toolkit's judgement. What the study measures is what B1 changes.
-- **The sign test is uninformative here.** B1 can only downgrade, so c = 0 is guaranteed whenever B0 accepts everything; the very small p-value reflects the design, not evidence of a favourable trade-off.
+- **The sign test cannot show the trade-off.** B1 can only downgrade, so c = 0 is guaranteed whenever B0 accepts everything; the very small p-value reflects the design, not evidence of a favourable trade-off.
 - **Generators differ.** False-downgrade rate was 25/25 = 1.000 for `AUTH_TEMPLATE` and 20/25 = 0.800 for `CHATGPT` (the five accepted supported cases were in families S1, 4 of 8, and S5, 1 of 8). Trap cases: 17/17 = 1.000; non-trap: 28/33 = 0.848.
 - **Sensitivity exclusions do not change the picture.** Excluding the 4 cases flagged for second-reading disagreement, the 3 flagged for label ambiguity, or both (196, 197 and 193 cases) leaves the false-downgrade rate at 45/50 = 0.900 and B1 incorrect-accept at 0.
-- **Exploratory only (not pre-declared):** B1 kept 5 of 50 supported cases versus 0 of 150 unsupported cases (Fisher exact p ≈ 0.0008). This shows B1's rule has some discrimination; it does not change the pre-declared outcome.
+- **Exploratory only (not pre-declared):** B1 kept 5 of 50 supported cases versus 0 of 150 unsupported cases (Fisher exact p ≈ 0.0008). B1's decisions are associated with the construction labels, though the five retained cases sit in one generator and two families; this does not change the pre-declared outcome.
 - **Dominant B1 reason code** was `MISSING_ANCHOR_TERM` (118 of 200 cases), consistent with a strict lexical rule applied to constructed evidence.
 
 Detailed results: per-stratum tables (`overall`, `by_generator`, `by_family`, `by_trap`, `by_label`, `sensitivity`) and `metrics.json` / `summary.md` in the analysis output folder; the written report once frozen.
@@ -111,8 +111,20 @@ This is a controlled synthetic study, not an evaluation of real-world audit perf
 - **One audit question:** All cases concern ISO/IEC 42001 Clause 4.3, C4-Q03. Generalisation to other clauses or audit tasks is unknown.
 - **ChatGPT generator style uniformity:** Similarities in generated language may make lexical patterns easier to detect than in independently authored or real-world evidence.
 - **Sign test:** because B1 is downgrade-only and B0 accepts every case, the paired sign test cannot be unfavourable to B1 and carries no information about the trade-off. The false-downgrade rate is the deciding measure.
-- **Partial second reading:** the independent second reading of labels covered only the ChatGPT half; the template half relies on the generator's own construction rules plus a 20-case spot-check.
+- **Partial, non-independent second reading:** a language-model second reading (same model family as the generator, so not independent verification) covered only the ChatGPT half; four disagreements and three ambiguity flags remain unresolved and no label was changed. The template half relies on its construction rules plus a 20-case spot-check, which cannot bound the error rate of the other 180 labels.
 - **Lexical intervention:** B1 tests a frozen rule-based consistency check, not general semantic understanding or independent evidence verification.
+
+### Declared limitations (protocol section 3)
+
+These seven limitations are declared by the research lead and apply to every result cited here:
+
+1. **Synthetic only.** Rates describe the generated cases, not real audits. No claim about real-world prevalence.
+2. **Ground truth by construction, not by independent human review.**
+3. **Single author, operator and approver.** No independent party verified process, isolation or outcomes.
+4. **Possible circularity.** The generator author also designed B1. Mitigated, not removed: a second generator, a clean hold-out (cases generated after the B1 freeze), results reported by generator.
+5. **B0 has no semantic check by design.** Because every case carries a valid, hash-matched reference, the B0 incorrect-accept rate is largely determined by construction. The study shows the mechanism and the size of B1's effect on this benchmark; it does **not** show how often the problem occurs in real audits.
+6. **Pilot scale.** Intervals limit conclusions.
+7. **Isolation by file separation and procedure only**, not independently verified OS-enforced denial.
 
 The findings cannot establish effectiveness across organisations, audit contexts, document styles, or independently collected evidence.
 
@@ -129,7 +141,7 @@ The findings cannot establish effectiveness across organisations, audit contexts
   docs/        protocol amendment, case-family specification, report
 ```
 
-> TODO (author to confirm before publishing): final folder names, and which of these folders are published. `labels.jsonl` and the flags file are not part of this public layout until a publication decision is made; without them, steps 5 onward cannot be re-run by a third party, but the sealed hashes below still let a reader check any copy they are later given.
+> Reproduction of the scored results needs the label file, which is held privately; a public package would let a reader verify hashes and re-run the unscored stages, but not re-score. Note: folder names above are the planned layout; the final published set is decided at the publication sign-off. `labels.jsonl` and the flags file are not part of this public layout until a publication decision is made; without them, steps 5 onward cannot be re-run by a third party, but the sealed hashes below still let a reader check any copy they are later given.
 
 The repository should distinguish frozen inputs, source code, execution outputs, analysis outputs, and provenance records.
 
@@ -207,15 +219,15 @@ Seal manifests (`manifest_body_sha256`):
 **Input manifest:** Gate 2 seal (above)  
 **Output manifest:** Gate 3 seal and analysis seal (above)  
 **Execution record:** `b0_run_manifest.json` and `b1_run_manifest.json`: 200 valid B0 runs, 0 technical failures; B1 ACCEPT = 5, WITHHOLD = 195, 0 technical failures  
-**Generator provenance:** 100 cases from a template-based generator (`AUTH_TEMPLATE`) and 100 from a ChatGPT-assisted generator (`CHATGPT`), 25 per label each. Case IDs are `SG-` plus 8 hex characters. One ID collision between the two halves was found before any run and fixed by re-splitting the ChatGPT half with a new seed; the superseded split is kept as a record. A 20-case spot-check of label fit passed 20/20; a second reading covered the ChatGPT half only.
+**Generator provenance:** 100 cases from a template-based generator (`AUTH_TEMPLATE`) and 100 from a ChatGPT-assisted generator (`CHATGPT`), 25 per label each. Case IDs are `SG-` plus 8 hex characters. Both halves were split with the same seed and produced the same 100 case IDs; this was found at the merge on 18 November 2026, before the combined set was sealed or run, and fixed by re-splitting the ChatGPT half with a new seed. The superseded split is kept as a record and no case content or label changed. A 20-case spot-check of label fit passed 20/20; a second reading covered the ChatGPT half only.
 
 Hashes establish file integrity relative to recorded manifests; they do not independently establish label correctness or scientific validity.
 
 ## 8. Licence and contact
 
-**Licence:** TODO (author to confirm: licence for code and for data)
+**Licence:** MIT License
 
-**Contact:** TODO (author to confirm)
+**Contact:** William Hartono
 
 **Research affiliation:** OdySEA AI Safety Capstone
 
